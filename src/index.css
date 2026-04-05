@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink: 15 23 42;
+    --muted: 100 116 139;
+    --paper: 248 250 252;
+    --surface: 255 255 255;
+    --panel: 255 255 255;
+    --stroke: 226 232 240;
+    --accent: 14 165 164;
+    --accent-2: 245 158 11;
+    --accent-3: 37 99 235;
+  }
+
+  .dark {
+    --ink: 226 232 240;
+    --muted: 148 163 184;
+    --paper: 9 11 18;
+    --surface: 15 23 42;
+    --panel: 17 24 39;
+    --stroke: 30 41 59;
+    --accent: 45 212 191;
+    --accent-2: 251 191 36;
+    --accent-3: 96 165 250;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply font-body text-ink bg-paper;
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(
+        1200px circle at 10% -10%,
+        rgb(var(--accent) / 0.18),
+        transparent 45%
+      ),
+      radial-gradient(
+        900px circle at 90% 0%,
+        rgb(var(--accent-2) / 0.16),
+        transparent 40%
+      ),
+      linear-gradient(180deg, rgb(var(--paper) / 0.98), rgb(var(--paper) / 0.98));
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+  }
+}
