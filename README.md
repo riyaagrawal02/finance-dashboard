@@ -1,73 +1,111 @@
-# React + TypeScript + Vite
+# Finance Dashboard UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Finance Dashboard web application built using React, TypeScript, and Tailwind CSS.
+This project demonstrates dashboard UI design, component structuring, state management, and data visualization on the frontend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Overview
 
-## React Compiler
+The Finance Dashboard allows users to track financial activity, view transactions, analyze spending patterns, and see financial insights through charts and summary cards.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project focuses on frontend architecture, UI/UX design, and state management rather than backend integration.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Dashboard Overview
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Summary cards for Total Balance, Income, and Expenses
+* Balance trend visualization
+* Spending breakdown by category
+* Responsive dashboard layout
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Transactions
+
+* Transactions table with Date, Amount, Category, and Type
+* Search functionality
+* Filter by income and expense
+* Sorting support
+* Admin can add transactions
+* Viewer can only view data
+
+### Role Based UI
+
+* Role switch between Admin and Viewer
+* Admin can add transactions
+* Viewer has read-only access
+
+### Insights
+
+* Highest spending category
+* Monthly income vs expense comparison
+* Basic financial insights
+
+### UI / UX
+
+* Modern dashboard layout with sidebar and topbar
+* Responsive design
+* Dark mode support
+* Clean card-based UI
+* Smooth hover effects and spacing
+
+### Data Management
+
+* State managed using Context API
+* Transactions stored in Local Storage
+* Mock data used for demonstration
+
+---
+
+## Tech Stack
+
+* React
+* TypeScript
+* Tailwind CSS
+* Recharts (for charts)
+* Context API (State Management)
+* Local Storage
+
+---
+
+## Project Structure
+
+```
+src
+ ├── components
+ ├── pages
+ ├── context
+ ├── data
+ ├── App.tsx
+ ├── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Setup Instructions
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository
+2. Install dependencies
+
 ```
+npm install
+```
+
+3. Run the development server
+
+```
+npm run dev
+```
+
+4. Open in browser
+
+```
+http://localhost:5173
+```
+
+---
+
+
+
